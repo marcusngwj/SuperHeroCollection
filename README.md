@@ -1,0 +1,1 @@
+https://webpack.js.org/plugins/html-webpack-plugin/ <--- use this to generate the html in dist folder

@@ -1,0 +1,8 @@
+.hero-album {
+  display: flex;
+  flex-flow: row wrap;
+
+  .hero-album-header {
+    flex: 1 0 100%;
+  }
+}
