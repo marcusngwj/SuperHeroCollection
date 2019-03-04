@@ -11,6 +11,9 @@ export class HeroView {
     const nameTextContent = document.createTextNode(this._hero.name);
     name.appendChild(nameTextContent);
 
+    const image = document.createElement('img');
+    image.src = require('./../../assets/images/' + this._hero.image);
+
     const powerSectionTitle = document.createElement('p');
     const powerSectionTitleTextContext = document.createTextNode("Powers: ");
     powerSectionTitle.appendChild(powerSectionTitleTextContext);
@@ -36,6 +39,7 @@ export class HeroView {
     heroContainer.setAttribute('class', 'hero-container');
 
     heroContainer.appendChild(name);
+    heroContainer.appendChild(image);
     heroContainer.appendChild(powerSectionTitle);
     heroContainer.appendChild(powerSection);
 
