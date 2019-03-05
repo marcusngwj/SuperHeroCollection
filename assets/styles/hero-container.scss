@@ -1,12 +1,19 @@
 .hero-container {
   width: 170px;
   margin: 10px;
-  border: 1px solid #000;
-  border-radius: 5px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px hsla(0, 0%, 0%, .3);
+
+  &:hover, &:focus {  
+    box-shadow: 0 2px 8px hsla(0, 0%, 0%, .6);
+  }
 
   img {
     width: 150px;

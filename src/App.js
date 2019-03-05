@@ -1,3 +1,5 @@
+import './../assets/styles/app.scss';
+
 let Hero = require('./models/Hero').Hero;
 let PowerStat = require('./models/PowerStat').PowerStat;
 let SortButton = require('./components/SortButton').SortButton;
@@ -64,8 +66,12 @@ export class App {
     const descIntButton = new SortButton("By intelligence, descending", this._sortAlbums, sortByIntelligenceDesc);
     const ascIntButton = new SortButton("By intelligence, ascending", this._sortAlbums, sortByIntelligenceAsc);
 
-    rootContainer.appendChild(descIntButton.render());
-    rootContainer.appendChild(ascIntButton.render());
+    const buttonContainer = document.createElement('div');
+    buttonContainer.setAttribute('class', 'button-container');
+
+    buttonContainer.appendChild(descIntButton.render());
+    buttonContainer.appendChild(ascIntButton.render());
+    rootContainer.appendChild(buttonContainer);
 
     const albumContainer = document.createElement('div');
     albumContainer.setAttribute('id', 'album-container');
