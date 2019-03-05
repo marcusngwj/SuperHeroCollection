@@ -97,7 +97,7 @@ npm install style-loader css-loader --save-dev
 ```
 npm install url-loader --save-dev
 ```
-> Refer to [HeroView](../src/components/HeroView.js)
+> Refer to [HeroView](src/components/HeroView.js)
 19. All all loaders to `webpack.config.js`
 ```
 module: {
