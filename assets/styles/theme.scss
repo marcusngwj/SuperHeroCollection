@@ -1,0 +1,9 @@
+$theme-color: hsla(45, 100%, 71%, 1);	//Hex: #FFD96A
+
+%button {
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px hsla(0, 0%, 0%, .6);
+  transition: background-color .3s;
+}
