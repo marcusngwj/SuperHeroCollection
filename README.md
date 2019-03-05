@@ -77,7 +77,56 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({         
       template: './assets/index.html',  // instead of creating a new file, use the template
+      inject: false,  // Prevent duplicate loading: https://stackoverflow.com/a/38292765
+      minify: {
+        removeEmptyElements: false // Prevent empty tag from being removed: https://stackoverflow.com/a/51820854
+      }
     })
   ]
 };
+```
+16. Install `sass-loader` and `node-sass`
+```
+npm install sass-loader node-sass webpack --save-dev
+```
+17. Insall `style-loader` and `css-loader` to chain with `sass-loader`
+```
+npm install style-loader css-loader --save-dev
+```
+18. Install `url-loader` for loading of images
+```
+npm install url-loader --save-dev
+```
+> Refer to [HeroView](../src/components/HeroView.js)
+19. All all loaders to `webpack.config.js`
+```
+module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader', // creates style nodes from JS strings
+          'css-loader',   // translates CSS into CommonJS
+          'sass-loader'   // compiles Sass to CSS, using Node Sass by default
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 100000,  // Convert images < 100kb to base64 strings
+              name: '[name].[ext]',
+              publicPath:'assets/images/'
+            }
+          }
+        ]
+      }
+    ]
+  }
 ```
