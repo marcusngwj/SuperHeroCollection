@@ -20,7 +20,6 @@ $hero-container-border-radius: .3em;
   border-radius: $hero-container-border-radius;
   box-shadow: 0 1px 4px hsla(0, 0%, 0%, .3);
 
-  
   background-color: hsla(0, 100%, 100%, 1);
 
   &:hover {  
@@ -38,9 +37,12 @@ $hero-container-border-radius: .3em;
     @include hero-inner-content-style;
     font-family: roboto;
 
-    ul {
-      padding-left: 1em;
-      list-style-type: none;
+    .stat-container {
+      margin: .2em 0 .2em 0;
+
+      .stat-value {
+        float: right;
+      }
     }
   }
 

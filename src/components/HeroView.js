@@ -1,6 +1,10 @@
 import './../../assets/styles/hero-container.scss';
 let Hero = require('./../models/Hero').Hero;
 
+function formatStatTitle(title) {
+  return title.charAt(1).toUpperCase() + title.slice(2);
+}
+
 export class HeroView {
   constructor(hero) {
     this._hero = hero;
@@ -15,27 +19,27 @@ export class HeroView {
     const image = document.createElement('img');
     image.src = require('./../../assets/images/' + this._hero.image);
 
-    const powerSection = document.createElement('ul');
-
-    const intelligenceStat = document.createElement('li');
-    const intelligenceStatTextContext = document.createTextNode("Intelligence: " + this._hero.powerstats.intelligence);
-    intelligenceStat.appendChild(intelligenceStatTextContext);
-    powerSection.appendChild(intelligenceStat);
-
-    const strengthStat = document.createElement('li');
-    const strengthStatTextContext = document.createTextNode("Strength: " + this._hero.powerstats.strength);
-    strengthStat.appendChild(strengthStatTextContext);
-    powerSection.appendChild(strengthStat);
-
-    const speedStat = document.createElement('li');
-    const speedStatTextContext = document.createTextNode("Speed: " + this._hero.powerstats.speed);
-    speedStat.appendChild(speedStatTextContext);
-    powerSection.appendChild(speedStat);
-
     const powerContainer = document.createElement('div');
     powerContainer.setAttribute('class', 'power-container');
 
-    powerContainer.appendChild(powerSection);
+    Object.entries(this._hero.powerstats).forEach((stat) => {
+      const statTitle = document.createElement('span');
+      statTitle.setAttribute('class', 'stat-title');
+      const statTitleTextContext = document.createTextNode(formatStatTitle(stat[0]));
+      statTitle.appendChild(statTitleTextContext);
+
+      const value = document.createElement('span');
+      value.setAttribute('class', 'stat-value');
+      const valueTextContext = document.createTextNode(stat[1]);
+      value.appendChild(valueTextContext);
+
+      const statContainer = document.createElement('div');
+      statContainer.setAttribute('class', 'stat-container');
+      statContainer.appendChild(statTitle);
+      statContainer.appendChild(value);
+
+      powerContainer.appendChild(statContainer);
+    });
 
     const heroContainer = document.createElement('div');
     heroContainer.setAttribute('class', 'hero-container');
