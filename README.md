@@ -3,6 +3,10 @@ A Single Page Application (SPA) containing information on heros from different p
 The purpose of this exercise is to practise front-end development with `npm`, `webpack` and `Sass`.
 Details of the exercise requirements can be found [here](https://github.com/janakanuwan/web-page-design/tree/master/webpack-exercise-1 "CS3249 Tutorial Exercise 1").
 
+<p align="center">
+<img src="docs/screen-recording.gif" />
+</p>
+
 ## Instructions
 1. Run `npm install` to install all dependencies stated in package.json
 2. Run `npm run build` to make a build
