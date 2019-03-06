@@ -15,10 +15,6 @@ export class HeroView {
     const image = document.createElement('img');
     image.src = require('./../../assets/images/' + this._hero.image);
 
-    const powerSectionTitle = document.createElement('p');
-    const powerSectionTitleTextContext = document.createTextNode("Powers: ");
-    powerSectionTitle.appendChild(powerSectionTitleTextContext);
-
     const powerSection = document.createElement('ul');
 
     const intelligenceStat = document.createElement('li');
@@ -39,14 +35,14 @@ export class HeroView {
     const powerContainer = document.createElement('div');
     powerContainer.setAttribute('class', 'power-container');
 
-    powerContainer.appendChild(powerSectionTitle);
     powerContainer.appendChild(powerSection);
 
     const heroContainer = document.createElement('div');
     heroContainer.setAttribute('class', 'hero-container');
 
-    heroContainer.appendChild(name);
     heroContainer.appendChild(image);
+    heroContainer.appendChild(name);
+    
     heroContainer.appendChild(powerContainer);
 
     return heroContainer;

@@ -1,4 +1,7 @@
+@import 'theme.scss';
+
 $hero-container-width: 12em;
+$hero-container-border-radius: .3em;
 
 @mixin hero-inner-content-style {
   padding: 0.5em;
@@ -14,10 +17,10 @@ $hero-container-width: 12em;
 
   border-width: 0;
   outline: none;
-  border-radius: 2px;
+  border-radius: $hero-container-border-radius;
   box-shadow: 0 1px 4px hsla(0, 0%, 0%, .3);
 
-  font-family: roboto;
+  
   background-color: hsla(0, 100%, 100%, 1);
 
   &:hover {  
@@ -26,19 +29,24 @@ $hero-container-width: 12em;
 
   .hero-name {
     @include hero-inner-content-style;
-
+    background-color: $theme-color;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
   }
 
   .power-container {
     @include hero-inner-content-style;
+    font-family: roboto;
 
     ul {
       padding-left: 1em;
+      list-style-type: none;
     }
   }
 
   img {
     width: $hero-container-width;
     height: $hero-container-width;
+    border-radius: $hero-container-border-radius $hero-container-border-radius 0 0;
   }
 }
