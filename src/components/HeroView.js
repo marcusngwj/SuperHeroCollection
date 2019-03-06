@@ -9,6 +9,7 @@ export class HeroView {
   render() {
     const name = document.createElement('h3');
     const nameTextContent = document.createTextNode(this._hero.name);
+    name.setAttribute('class', 'hero-name');
     name.appendChild(nameTextContent);
 
     const image = document.createElement('img');
@@ -35,13 +36,18 @@ export class HeroView {
     speedStat.appendChild(speedStatTextContext);
     powerSection.appendChild(speedStat);
 
+    const powerContainer = document.createElement('div');
+    powerContainer.setAttribute('class', 'power-container');
+
+    powerContainer.appendChild(powerSectionTitle);
+    powerContainer.appendChild(powerSection);
+
     const heroContainer = document.createElement('div');
     heroContainer.setAttribute('class', 'hero-container');
 
     heroContainer.appendChild(name);
     heroContainer.appendChild(image);
-    heroContainer.appendChild(powerSectionTitle);
-    heroContainer.appendChild(powerSection);
+    heroContainer.appendChild(powerContainer);
 
     return heroContainer;
   }

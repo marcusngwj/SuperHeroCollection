@@ -1,5 +1,11 @@
+body {
+  background-color: hsla(216, 77%, 75%, .3);
+}
+
+#root {
+  padding: 1em;
+}
+
 .button-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }

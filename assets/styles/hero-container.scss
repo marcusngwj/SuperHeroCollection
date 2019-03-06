@@ -1,7 +1,13 @@
+$hero-container-width: 12em;
+
+@mixin hero-inner-content-style {
+  padding: 0.5em;
+  margin: 0px;
+}
+
 .hero-container {
-  width: 170px;
+  width: $hero-container-width;
   margin: 10px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -11,13 +17,28 @@
   border-radius: 2px;
   box-shadow: 0 1px 4px hsla(0, 0%, 0%, .3);
 
-  &:hover, &:focus {  
+  font-family: roboto;
+  background-color: hsla(0, 100%, 100%, 1);
+
+  &:hover {  
     box-shadow: 0 2px 8px hsla(0, 0%, 0%, .6);
   }
 
+  .hero-name {
+    @include hero-inner-content-style;
+
+  }
+
+  .power-container {
+    @include hero-inner-content-style;
+
+    ul {
+      padding-left: 1em;
+    }
+  }
+
   img {
-    width: 150px;
-    height: 150px;
-    margin: 5px;
+    width: $hero-container-width;
+    height: $hero-container-width;
   }
 }

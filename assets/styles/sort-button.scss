@@ -3,8 +3,8 @@
 .button-sort {
   @extend %button;
   background-color: $theme-color;
-  padding: 1em;
-  margin: 1em;
+  padding: 0.5em;
+  margin: 1em 1.5em 1em 0em;
 
   &:hover, &:focus {  // https://sass-lang.com/documentation/file.SASS_REFERENCE.html#parent-selector
     background-color: darken($theme-color, 30); // https://www.tutorialsteacher.com/sass/sass-color-functions
