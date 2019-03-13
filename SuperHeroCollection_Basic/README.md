@@ -48,7 +48,7 @@ npm install --save-dev webpack-dev-server
 ```
 11. Append `{"start": "webpack-dev-server --mode development --hot --inline --open"}` to `"scripts:{}"` in `package.json`
 
-> Add `--hot --inline` to enable [hot module replacement](https://webpack.js.org/concepts/hot-module-replacement/)
+> Add `--hot --inline` to enable [hot module replacement](https://webpack.js.org/concepts/hot-module-replacement/)<br>
 > Add `--open` to open up in default browser upon starting
 
 12. Create `webpack.config.js` in the same directory as `package.json`
