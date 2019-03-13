@@ -50,8 +50,8 @@ npm install --save-dev webpack-dev-server
 
 > Add `--hot --inline` to enable [hot module replacement](https://webpack.js.org/concepts/hot-module-replacement/)
 > Add `--open` to open up in default browser upon starting
-12. Create `webpack.config.js` in the same directory as `package.json`
 
+12. Create `webpack.config.js` in the same directory as `package.json`
 ```
 const path = require('path');
 module.exports = {
