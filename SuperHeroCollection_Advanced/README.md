@@ -170,7 +170,7 @@ module.exports = {
 ```
 entry: './src/index.jsx'
 ```
-25. Install `[json-server](https://github.com/typicode/json-server)` to set up a mock server to load data via HTTP
+25. Install [json-server](https://github.com/typicode/json-server) to set up a mock server to load data via HTTP
 ```
 npm i -D json-server
 ```
@@ -178,5 +178,5 @@ npm i -D json-server
 27. Copy [heroes_db.json](https://raw.githubusercontent.com/janakanuwan/web-page-design/master/webpack-example-react-3/test/heroes_db.json) to `test` directory. (Original Source: [superhero-api](https://github.com/akabab/superhero-api))
 28. Append `{"mock:REST": "json-server --watch test/heroes_db.json"}` to `"scripts:{}"` in `package.json`
 29. Start the server using `npm run mock:REST` on a different terminal
-> Go to `http://localhost:3000/heroes/` to view all hero data
+> Go to http://localhost:3000/heroes/ to view all hero data
 30. Use [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to get data from the server
