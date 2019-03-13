@@ -1,7 +1,7 @@
 ## Description
 A Single Page Application (SPA) containing information on heros from different publishers.
-The purpose of this exercise is to practise front-end development with `npm`, `webpack` and `Sass`.
-Details of the exercise requirements can be found [here](https://github.com/janakanuwan/web-page-design/tree/master/webpack-exercise-1 "CS3249 Tutorial Exercise 1").
+The purpose of this exercise is to practise front-end development with `npm`, `webpack`, `Sass` and `react`.
+Details of the exercise requirements can be found [here](https://github.com/janakanuwan/web-page-design/tree/master/react-exercise-1 "CS3249 Tutorial Exercise - React").
 
 <p align="center">
 <img src="docs/screen-recording.gif" />
@@ -170,3 +170,13 @@ module.exports = {
 ```
 entry: './src/index.jsx'
 ```
+25. Install `[json-server](https://github.com/typicode/json-server)` to set up a mock server to load data via HTTP
+```
+npm i -D json-server
+```
+26. Create a `test` directory in the same directory as `src`
+27. Copy [heroes_db.json](https://raw.githubusercontent.com/janakanuwan/web-page-design/master/webpack-example-react-3/test/heroes_db.json) to `test` directory. (Original Source: [superhero-api](https://github.com/akabab/superhero-api))
+28. Append `{"mock:REST": "json-server --watch test/heroes_db.json"}` to `"scripts:{}"` in `package.json`
+29. Start the server using `npm run mock:REST` on a different terminal
+> Go to `http://localhost:3000/heroes/` to view all hero data
+30. Use [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to get data from the server
