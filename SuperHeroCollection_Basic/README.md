@@ -105,7 +105,7 @@ npm install style-loader css-loader --save-dev
 npm install url-loader --save-dev
 ```
 > Refer to [HeroView](src/components/HeroView.js) on how to import images
-19. All all loaders to `webpack.config.js`
+19. Add all loaders to `webpack.config.js`
 ```
 module: {
     rules: [
