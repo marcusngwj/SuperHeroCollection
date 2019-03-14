@@ -19,6 +19,13 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     port: 9000
   },
+  resolve: {
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx'], // https://stackoverflow.com/a/38778792
+    alias: {
+      src: path.resolve(__dirname, './src/'),
+      Styles: path.resolve(__dirname, './assets/styles/')
+    }
+  },
   module: {
     rules: [
       {

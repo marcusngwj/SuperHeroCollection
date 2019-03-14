@@ -102,7 +102,7 @@ npm install style-loader css-loader --save-dev
 npm install url-loader --save-dev
 ```
 > Refer to [HeroView](src/components/HeroView.js) on how to import images
-19. All all loaders to `webpack.config.js`
+19. Add all loaders to `webpack.config.js`
 ```
 module: {
     rules: [
@@ -170,13 +170,33 @@ module.exports = {
 ```
 entry: './src/index.jsx'
 ```
-25. Install [json-server](https://github.com/typicode/json-server) to set up a mock server to load data via HTTP
+25. Update `webpack.config.js` to automatically resolve `.jsx` extensions
+```
+module.exports = {
+  resolve: {
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.jsx']
+  }
+};
+```
+> See [resolve extensions](https://webpack.js.org/configuration/resolve/#resolveextensions) for more details
+26. Use [alias](https://webpack.js.org/configuration/resolve/#resolvealias) in `webpack.config.js` to resolve paths
+```
+module.exports = {
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, './src/'),
+      Styles: path.resolve(__dirname, './assets/styles/')
+    }
+  }
+};
+```
+27. Install [json-server](https://github.com/typicode/json-server) to set up a mock server to load data via HTTP
 ```
 npm i -D json-server
 ```
-26. Create a `test` directory in the same directory as `src`
-27. Copy [heroes_db.json](https://raw.githubusercontent.com/janakanuwan/web-page-design/master/webpack-example-react-3/test/heroes_db.json) to `test` directory. (Original Source: [superhero-api](https://github.com/akabab/superhero-api))
-28. Append `{"mock:REST": "json-server --watch test/heroes_db.json"}` to `"scripts:{}"` in `package.json`
-29. Start the server using `npm run mock:REST` on a different terminal
+28. Create a `test` directory in the same directory as `src`
+29. Copy [heroes_db.json](https://raw.githubusercontent.com/janakanuwan/web-page-design/master/webpack-example-react-3/test/heroes_db.json) to `test` directory. (Original Source: [superhero-api](https://github.com/akabab/superhero-api))
+30. Append `{"mock:REST": "json-server --watch test/heroes_db.json"}` to `"scripts:{}"` in `package.json`
+31. Start the server using `npm run mock:REST` on a different terminal
 > Go to http://localhost:3000/heroes/ to view all hero data
-30. Use [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to get data from the server
+32. Use [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to get data from the server
